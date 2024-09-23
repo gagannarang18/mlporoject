@@ -1,38 +1,46 @@
 /* General body styling */
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: #ecf0f1;
+    background-color: #ecf0f1; /* Light gray background */
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
 }
 
 /* Styling for the main container */
 .container {
-    width: 100%;
-    max-width: 600px;
-    margin: 20px;
+    width: 100%; /* Full width */
+    max-width: 800px; /* Maximum width for better appearance on larger screens */
+    height: auto; /* Allow height to be determined by content */
     padding: 30px;
-    background-color: #fff;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
+    background: linear-gradient(135deg, #2980b9, #6dd5ed); /* Gradient background */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow */
+    border-radius: 12px; /* Rounded corners */
+    margin: 20px auto; /* Center container with margin */
+    overflow-y: auto; /* Enable vertical scrolling when content overflows */
+    max-height: 90vh; /* Limit the maximum height to 90% of the viewport height */
 }
 
 /* Headings and form legends */
-h1, h2, legend {
-    color: #2c3e50;
-    text-align: center;
+h1 {
+    color: #000; /* Black color for main heading */
+    text-align: center; /* Centered text */
+    font-weight: 700; /* Bold text */
+    margin-bottom: 20px;
+    text-transform: uppercase; /* Uppercase for a more modern look */
+}
+
+h2, legend {
+    color: #fff; /* White text for better contrast against the colorful background */
+    text-align: center; /* Centered text */
     font-weight: 600;
     margin-bottom: 20px;
+    text-transform: uppercase; /* Uppercase for a more modern look */
 }
 
 /* Labels */
 label {
-    color: #34495e;
-    font-weight: 500;
+    color: #000; /* Black color for labels */
+    font-weight: 700; /* Bold text */
     margin-bottom: 5px;
     display: block;
 }
@@ -40,47 +48,85 @@ label {
 /* Styling form inputs and select elements */
 .form-control {
     width: 100%;
-    padding: 10px;
+    padding: 12px; /* Increased padding for better touch area */
     margin: 10px 0 20px 0;
     border-radius: 8px;
-    border: 1px solid #bdc3c7;
-    background-color: #f9f9f9;
-    transition: border-color 0.3s ease;
+    border: 1px solid #bdc3c7; /* Light gray border */
+    background-color: #fff; /* White background for inputs */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transition for focus effect */
+    font-weight: 700; /* Bold text for placeholders */
 }
 
+/* Focus effect on form controls */
 .form-control:focus {
-    border-color: #2980b9;
-    outline: none;
-    box-shadow: 0 0 8px rgba(41, 128, 185, 0.2);
+    border-color: #2980b9; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 8px rgba(41, 128, 185, 0.2); /* Shadow effect on focus */
+}
+
+/* Placeholder styling (if needed) */
+::placeholder {
+    color: #bdc3c7; /* Light gray color for placeholders */
+    opacity: 1; /* Ensuring full opacity */
+    font-weight: 700; /* Bold text for placeholders */
 }
 
 /* Primary button styling */
 .btn-primary {
-    background-color: #2980b9;
-    color: #fff;
+    background-color: #000; /* Set button background color to black */
+    color: #fff; /* White text */
     padding: 12px;
     font-size: 18px;
     border: none;
-    border-radius: 8px;
+    border-radius: 8px; /* Rounded corners */
     cursor: pointer;
-    width: 100%;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%; /* Full width */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
+    font-weight: 600; /* Bold text */
+    letter-spacing: 1px; /* Spacing between letters */
 }
 
+/* Button hover effect */
 .btn-primary:hover {
-    background-color: #3498db;
-    transform: translateY(-2px);
+    background-color: #333; /* Darker shade on hover */
+    transform: translateY(-2px); /* Slight lift effect */
 }
 
+/* Button active effect */
 .btn-primary:active {
-    background-color: #1e6f91;
-    transform: translateY(0);
+    background-color: #000; /* Keep it black on active */
+    transform: translateY(0); /* Reset lift effect */
 }
 
 /* Prediction result styling */
 h2 {
-    margin-top: 20px;
-    color: #27ae60;
+    margin-top: 20px; /* Space above result */
+    color: #000; /* Set prediction text color to black */
     font-weight: 600;
-    text-align: center;
+    text-align: center; /* Centered text */
+    font-size: 20px; /* Slightly larger text */
+}
+
+/* Additional styling for the legend */
+legend {
+    font-size: 24px; /* Larger font size */
+    font-weight: 500; /* Medium weight */
+    color: #fff; /* White color for legend */
+    border-bottom: 2px solid #fff; /* Underline effect */
+    padding-bottom: 10px; /* Space below the text */
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .container {
+        padding: 20px; /* Adjust padding for smaller screens */
+    }
+
+    .btn-primary {
+        font-size: 16px; /* Smaller button text */
+    }
+
+    h2 {
+        font-size: 18px; /* Smaller prediction text */
+    }
 }
